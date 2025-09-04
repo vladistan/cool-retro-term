@@ -110,6 +110,8 @@ int main(int argc, char *argv[])
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/qmltermwidget");
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/../PlugIns");
     importPathList.prepend(QCoreApplication::applicationDirPath() + "/../../../qmltermwidget");
+    // Add path for bundled QML modules in app bundle
+    importPathList.prepend(QCoreApplication::applicationDirPath() + "/../Resources/qml");
     engine.setImportPathList(importPathList);
 
     engine.load(QUrl(QStringLiteral ("qrc:/main.qml")));
